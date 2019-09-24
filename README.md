@@ -11,5 +11,6 @@
 * Azure Pipelines 
 
 ## Future
+* Status page
 * GCP
 * Kubernetes/GKE
