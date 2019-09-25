@@ -2,7 +2,19 @@
 # Test a Django project on multiple versions of Python.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
+variables:
+  DBNAME: pg11
+  DBHOST: 127.0.0.1
+  DBUSER: admin
+  DBPASS: password123
+  DBPORT: 5432
 
+resources:
+  containers:
+  - container: pg11
+    image: postgres:11
+    ports: 5432
+ 
 trigger:
 - master
 
