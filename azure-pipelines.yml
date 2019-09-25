@@ -8,6 +8,7 @@ variables:
   DBUSER: admin
   DBPASS: password123
   DBPORT: 5432
+# Note: not used for PRODUCTION!!!! 
 
 resources:
   containers:
