@@ -12,6 +12,8 @@ markdown = "*"
 django-filter = "*"
 gunicorn = "*"
 django-health-check = "*"
+structlog = "*"
+python-json-logger = "*"
 
-[requires]
-python_version = "3.6"
+#[requires]
+#python_version = "3.6"
