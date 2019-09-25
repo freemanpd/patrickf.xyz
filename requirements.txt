@@ -4,6 +4,7 @@ django-health-check==3.11.0
 djangorestframework==3.10.3
 gunicorn==19.9.0
 Markdown==3.1.1
+psycopg2-binary==2.8.3
 python-json-logger==0.1.11
 pytz==2019.2
 six==1.12.0
