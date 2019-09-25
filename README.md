@@ -1,5 +1,7 @@
-[![Build Status](https://dev.azure.com/freemanpd36/freemanpd36/_apis/build/status/freemanpd.patrickf.xyz?branchName=master)](https://dev.azure.com/freemanpd36/freemanpd36/_build/latest?definitionId=1&branchName=master)
 # patrickf.xyz
+[![Build Status](https://dev.azure.com/freemanpd36/freemanpd36/_apis/build/status/freemanpd.patrickf.xyz?branchName=master)](https://dev.azure.com/freemanpd36/freemanpd36/_build/latest?definitionId=1&branchName=master)
+
+This repository contains the all code to my personal webiste ["patrickf.xyz"](https://www.django-rest-framework.org/).
 
 ## Tools/services used
 * Teraform 
