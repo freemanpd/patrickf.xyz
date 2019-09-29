@@ -8,6 +8,7 @@ This repository contains all the code to my personal webiste ["patrickf.xyz"](ht
 * Teraform - infrastructure deployment
 * Helm - container infrastructure deployment
 * Azure Pipelines - CI/CD
+* Azure Container Registry - storing Docker images
 * DJANGO - RestAPI
 * React - frontend application
 * PostgreSQL - database

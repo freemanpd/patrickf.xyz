@@ -1,4 +1,22 @@
 ---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: app: nginx-patrickfxyz
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: app: nginx-patrickfxyz
+    spec:
+      containers:
+      - name: nginx-patrickfxyz
+        image: nginx
+        ports:
+        - containerPort: 80
+          protocol: TCP
+---
 kind: Service
 apiVersion: v1
 metadata:
@@ -16,21 +34,7 @@ spec:
       port: 443
       targetPort: 80
 
----
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: app: nginx-patrickfxyz
-spec:
-  replicas: 2
-  template:
-    metadata:
-      labels:
-        app: app: nginx-patrickfxyz
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
-        ports:
-        - containerPort: 80
-          protocol: TCP
+### replace patrickfxyz with APP VAR
+### replace cert id with VAR
+
+#Note: add config map and nginx conf. Remove nginx versions, redirect unsecure to secure, etc...
