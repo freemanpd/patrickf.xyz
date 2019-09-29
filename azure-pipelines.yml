@@ -23,8 +23,6 @@ pool:
   vmImage: 'ubuntu-latest'
 strategy:
   matrix:
-    # Python36:
-    #   PYTHON_VERSION: '3.6'
     Python37:
       PYTHON_VERSION: '3.7'
   maxParallel: 1
@@ -76,7 +74,7 @@ variables:
   backend-imageName: 'patrickfxyz-django-backend'
 
 steps:
-- task: Docker@1
+- task: Docker@2
   displayName: Build an $(backend-imageName) image
   inputs:
     repository: $(backend-imageName)
@@ -86,10 +84,10 @@ steps:
 variables:
   ui-imageName: 'patrickfxyz-react-ui'
 
-steps:
-- task: Docker@2
-  displayName: Build an $(ui-imageName) image
-  inputs:
-    repository: $(ui-imageName))
-    command: build
-    Dockerfile: patrickf-ui/Dockerfile
+# steps:
+# - task: Docker@2
+#   displayName: Build an $(ui-imageName)image
+#   inputs:
+#     repository: $(ui-imageName))
+#     command: build
+#     Dockerfile: patrickf-ui/Dockerfile
