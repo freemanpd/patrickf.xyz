@@ -4,20 +4,21 @@
 This repository contains all the code to my personal webiste ["patrickf.xyz"](https://www.django-rest-framework.org/).
 
 ## Tools/services used
-* Teraform 
-* DigitalOcean
-* Kubernetes
-* DJANGO
-* AngularJS
-* PostgreSQL
-* NGINX 
-* Azure Pipelines 
+* DigitalOcean Kubernetes (DOK) - cloud/container infrastructure
+* Teraform - infrastructure deployment
+* Helm - container infrastructure deployment
+* Azure Pipelines - CI/CD
+* DJANGO - RestAPI
+* React - frontend application
+* PostgreSQL - database
+* NGINX - reverse proxying
+
+NOTE: I'll admit, using all the tools above for a simple personal website is definnelty overkill. However, the main purpose of chosing the tools above is for learning purposes and to provide an end-to-end introduction with a simple use-case. 
 
 ### Future
 * Status page
 * GCP
 * Kubernetes/GKE
-
 
 ### Requirements
 1. Python 3.6+

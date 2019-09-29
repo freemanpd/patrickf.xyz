@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: patrickf-djagno-backend-config
+data:
+  SECRET_KEY: 'REPLACE WITH YOUR SECRET KEY'
+  DB_HOST: postgres-postgresql # This matches the name we gave the service with helm
+  DB_NAME: {{ .Values.DBNAME }}
+  DB_USER: {{ .Values.DBUSER }}
+  DB_USER: {{ .Values.DBPASS }}

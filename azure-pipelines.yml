@@ -67,3 +67,11 @@ steps:
     testResultsFiles: "**/TEST-*.xml"
     testRunTitle: 'Python $(PYTHON_VERSION)'
   condition: succeededOrFailed()
+
+# Deploys patrickf.xyz infrastructure
+- task: Install kubctl 
+  displayName: Install kubctl 
+  inputs:
+    scriptSource: 'inline'
+    script: |
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
