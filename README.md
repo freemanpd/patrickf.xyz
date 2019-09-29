@@ -1,7 +1,7 @@
 # patrickf.xyz
 [![Build Status](https://dev.azure.com/freemanpd36/freemanpd36/_apis/build/status/freemanpd.patrickf.xyz?branchName=master)](https://dev.azure.com/freemanpd36/freemanpd36/_build/latest?definitionId=1&branchName=master)
 
-This repository contains all the code to my personal webiste ["patrickf.xyz"](https://www.patrickf.xyz/).
+This repository contains all the code to my personal webiste ["patrickf.xyz"](https://patrickf.xyz).
 
 ## Tools/services used
 * DigitalOcean Kubernetes (DOK) - cloud/container infrastructure
