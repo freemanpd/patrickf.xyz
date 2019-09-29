@@ -72,12 +72,12 @@ steps:
   inputs:
     kubectlVersion: '1.1.6' 
 
-- task: Docker@2
+- task: Docker@3
   displayName: Build an $(backend-imageName) Docker image
   inputs:
     repository: $(backend-imageName)
     command: build
-    Dockerfile: patrickf-backend/Dockerfile
+    Dockerfile: Dockerfile
 
 # steps:
 # - task: Docker@2
