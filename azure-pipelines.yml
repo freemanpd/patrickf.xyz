@@ -76,7 +76,7 @@ variables:
   backend-imageName: 'patrickfxyz-django-backend'
 
 steps:
-- task: Docker@2
+- task: Docker@1
   displayName: Build an $(backend-imageName) image
   inputs:
     repository: $(backend-imageName)
@@ -88,7 +88,7 @@ variables:
 
 steps:
 - task: Docker@2
-  displayName: Build an $(ui-imageName)image
+  displayName: Build an $(ui-imageName) image
   inputs:
     repository: $(ui-imageName))
     command: build
