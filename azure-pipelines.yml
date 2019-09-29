@@ -80,7 +80,7 @@ steps:
     dockerfile: Dockerfile
     containerRegistry: AzurecontainerRegistry
     tags: |
-      .0.0.1
+      0.0.1
 
 # - task: Docker@2
 #   displayName: Build an $(ui-imageName)image
