@@ -13,12 +13,10 @@ This repository contains all the code to my personal webiste ["patrickf.xyz"](ht
 * PostgreSQL - database
 * NGINX - reverse proxying
 
-NOTE: I'll admit, using all the tools above for a simple personal website is definnelty overkill. However, the main purpose of chosing the tools above is for learning purposes and to provide an end-to-end introduction with a simple use-case. 
+NOTE: I'll admit, using all the tools above for a simple personal website is definnelty overkill. However, the main purpose for chosing the tools above is for learning purposes and to provide an end-to-end introduction with a simple use-case. 
 
 ### Future
 * Status page
-* GCP
-* Kubernetes/GKE
 
 ### Requirements
 1. Python 3.6+

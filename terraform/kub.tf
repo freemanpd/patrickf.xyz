@@ -13,7 +13,3 @@ module "k8s" {
   do_k8s_nodepool_type = "s-1vcpu-2gb"
   do_k8s_pool_name = "k8s-nodepool-do"
 }
-
-data "digitalocean_database_cluster" "example" {
-  name = "example-cluster"
-}
