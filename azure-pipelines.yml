@@ -78,7 +78,7 @@ steps:
     command: buildAndPush
     repository: patrickfxyz/patrickfRegistry
     dockerfile: Dockerfile
-    containerRegistry: AzureContainerRegistry
+    containerRegistry: patrickfRegistry
     tags: |
       .0.0.1
 
