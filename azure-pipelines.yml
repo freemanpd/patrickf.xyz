@@ -72,23 +72,16 @@ steps:
   inputs:
     kubectlVersion: '1.1.6' 
 
-- stage: Build
-  displayName: Build and push $(backend-imageName) Docker image
-  jobs:  
-  - job: Build
-    displayName: $(backend-imageName) Docker image Build job
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
-    - task: Docker@2
-      displayName: Build an $(backend-imageName) Docker image
-      inputs:
-        command: buildAndPush
-        repository: $(backend-imageName)
-        dockerfile: Dockerfile
-        containerRegistry: patrickfRegistry
-        tags: |
-          .0.0.1
+  steps:
+  - task: Docker@2
+    displayName: Build an $(backend-imageName) Docker image
+    inputs:
+      command: buildAndPush
+      repository: $(backend-imageName)
+      dockerfile: Dockerfile
+      containerRegistry: patrickfRegistry
+      tags: |
+        .0.0.1
 
 # steps:
 # - task: Docker@2
