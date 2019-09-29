@@ -76,9 +76,9 @@ steps:
   displayName: Build an $(backend-imageName) Docker image
   inputs:
     command: buildAndPush
-    repository: patrickfxyz/patrickfRegistry
+    repository: patrickfxyz/$(backend-imageName)
     dockerfile: Dockerfile
-    containerRegistry: patrickfRegistry
+    containerRegistry: AzurecontainerRegistry
     tags: |
       .0.0.1
 
