@@ -8,3 +8,42 @@ data:
   DB_NAME: {{ .Values.DBNAME }}
   DB_USER: {{ .Values.DBUSER }}
   DB_USER: {{ .Values.DBPASS }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: django-k8s-starter-migrate
+  labels:
+    name: django-k8s-starter
+    type: migrate
+spec:
+  template:
+    spec:
+      containers:
+      - name: django-k8s-starter-migrate
+        image: ndevox/django-kubernetes-starter:latest
+        command: ["python",  "manage.py", "migrate", "--noinput"]
+        envFrom:
+        - configMapRef:
+            name: django-k8s-starter-config
+      restartPolicy: Never
+  backoffLimit: 4
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: django-k8s-starter-collectstatic
+  labels:
+    name: django-k8s-starter
+    type: collectstatic
+spec:
+  template:
+    spec:
+      containers:
+      - name: django-k8s-starter-collectstatic
+        image: ndevox/django-kubernetes-starter:latest
+        command: ["python3",  "manage.py", "collectstatic", "--noinput"]
+        envFrom:
+        - configMapRef:
+            name: django-k8s-starter-config
+      restartPolicy: Never
+  backoffLimit: 4
