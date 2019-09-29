@@ -72,6 +72,7 @@ steps:
 
 variables:
   backend-imageName: 'patrickfxyz-django-backend'
+  ui-imageName: 'patrickfxyz-react-ui'
 
 steps:
 - task: Docker@2
@@ -80,9 +81,6 @@ steps:
     repository: $(backend-imageName)
     command: build
     Dockerfile: patrickf-backend/Dockerfile
-
-variables:
-  ui-imageName: 'patrickfxyz-react-ui'
 
 # steps:
 # - task: Docker@2
