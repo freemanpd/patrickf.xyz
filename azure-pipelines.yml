@@ -8,6 +8,8 @@ variables:
   DBUSER: admin
   DBPASS: password123
   DBPORT: 5432
+  backend-imageName: 'patrickfxyz-django-backend'
+  ui-imageName: 'patrickfxyz-react-ui'
 # Note: not used for PRODUCTION!!!! 
 
 resources:
@@ -70,11 +72,6 @@ steps:
   inputs:
     kubectlVersion: '1.1.6' 
 
-variables:
-  backend-imageName: 'patrickfxyz-django-backend'
-  ui-imageName: 'patrickfxyz-react-ui'
-
-steps:
 - task: Docker@2
   displayName: Build an $(backend-imageName) image
   inputs:
