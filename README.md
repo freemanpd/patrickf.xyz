@@ -6,7 +6,6 @@ This repository contains all the code to my personal webiste ["patrickf.xyz"](ht
 ## Tools/services used
 * DigitalOcean Kubernetes (DOK) - cloud/container infrastructure
 * Teraform - infrastructure deployment
-* Helm - container infrastructure deployment
 * Azure Pipelines - CI/CD
 * Azure Container Registry - storing Docker images
 * DJANGO - RestAPI

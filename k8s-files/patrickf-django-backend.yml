@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: patrickfxyz/patrickfxyz-django-backend-migrate
-        image: patrickfxyz/patrickfxyz-django-backend
+        image: patrickfregistry.azurecr.io/patrickfxyz/patrickfxyz-django-backend:0.0.1
         command: ["python",  "manage.py", "migrate", "--noinput"]
         envFrom:
         - configMapRef:

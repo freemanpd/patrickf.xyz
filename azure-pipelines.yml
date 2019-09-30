@@ -82,9 +82,12 @@ steps:
     tags: |
       0.0.1
 
-# - task: Docker@2
-#   displayName: Build an $(ui-imageName)image
-#   inputs:
-#     repository: $(ui-imageName))
-#     command: build
-#     Dockerfile: patrickf-ui/Dockerfile
+- task: Docker@2
+  displayName: Build an $(ui-imageName) Docker image
+  inputs:
+    command: buildAndPush
+    repository: patrickfxyz/$(ui-imageName)
+    dockerfile: patrickf-ui/Dockerfile
+    containerRegistry: AzurecontainerRegistry
+    tags: |
+      0.0.1
