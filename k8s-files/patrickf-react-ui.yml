@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: patrickf-react-ui-config
 data:
-  SECRET_KEY: 'REPLACE WITH YOUR SECRET KEY'
+  SECRET_KEY: {{ .Values.SECRETKEY }}
