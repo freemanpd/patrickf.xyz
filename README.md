@@ -8,6 +8,7 @@ This repository contains all the code to my personal webiste ["patrickf.xyz"](ht
 * Teraform - infrastructure deployment
 * Azure Pipelines - CI/CD
 * Azure Container Registry - storing Docker images
+* Azure Blob storage - storing Terraform state remotely
 * DJANGO - RestAPI
 * React - frontend application
 * PostgreSQL - database
@@ -19,7 +20,7 @@ NOTE: I'll admit, using all the tools above for a simple personal website is def
 * Status page
 
 ### Requirements
-1. Python 3.6+
+1. Python 3.7+
 1. Pipenv 
 
 ## Installation
