@@ -136,13 +136,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-if os.getenv('ENV') == 'PROD':
-    CORS_ORIGIN_WHITELIST = (
-        'os.environ['UIHOST']'
+CORS_ORIGIN_ALLOW_ALL = True
 
-        'localhost:3000/'
-)
-else:
-CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/'
-)
+# CORS_ORIGIN_WHITELIST = (
+#        'localhost:3000',
+# )
