@@ -7,7 +7,11 @@ data:
   DB_HOST: {{ .Values.DBHOST }} #e.g. postgres
   DB_NAME: {{ .Values.DBNAME }}
   DB_USER: {{ .Values.DBUSER }}
-  DB_USER: {{ .Values.DBPASS }}
+  DB_PASS: {{ .Values.DBPASS }}
+  DB_PORT: {{ .Values.DBPORT }}
+  DB_SECRETKEY: {{ .Values.DBSECRETKEY }}
+  DB_DEBUGLOG: {{ .Values.DBDEBUGLOG }}
+
 apiVersion: batch/v1
 kind: Job
 metadata:

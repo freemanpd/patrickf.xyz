@@ -3,18 +3,18 @@
 
 This repository contains all the code to my personal webiste ["patrickf.xyz"](https://patrickf.xyz).
 
-## Tools/services used
-* DigitalOcean Kubernetes (DOK) - cloud/container infrastructure
+## Built using
+* DigitalOcean Kubernetes (DOKS) - cloud/container infrastructure
 * Teraform - infrastructure deployment
 * Azure Pipelines - CI/CD
 * Azure Container Registry - storing Docker images
 * Azure Blob storage - storing Terraform state remotely
-* DJANGO - RestAPI
-* React - frontend application
+* DJANGO - back-end RestAPI
+* React - front-end application
 * PostgreSQL - database
 * NGINX - reverse proxying
 
-NOTE: I'll admit, using all the tools above for a simple personal website is definitely overkill. However, the main purpose of choosing the tools above is for learning purposes with a simple use-case and to demonstrate my understanding of the solution from end-to-end.
+Note: you don't nessar
 
 ### Roadmap
 * Status page
@@ -39,6 +39,10 @@ python manage.py migrate
 4. Create admin user
 ```
 python manage.py createsuperuser --username admin
+```
+
+```
+python manage.py collectstatic
 ```
 
 ## Changelog

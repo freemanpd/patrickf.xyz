@@ -16,18 +16,24 @@ from datetime import timedelta
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+BACKEND_DIR = BASE_DIR 
+FRONTEND_DIR = os.path.abspath(
+    os.path.join(BACKEND_DIR, 'patrickf-ui'))
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-if os.getenv('ENV') == 'PROD':
-    SECRET_KEY = os.environ['SECRETKEY']
-    DEBUG = False
-else:
-    SECRET_KEY = '$2j=bhs+=-&sp=glzxka%thsaq%tmrjt@+my06y@q4osfnmkn)'
-    DEBUG = True
+SECRET_KEY = os.environ['SECRETKEY']
+DEBUG = os.environ['DEBUGLOG']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
+
+# CORS_ORIGIN_ALLOW_ALL = True
+
+# CORS_ORIGIN_WHITELIST = (
+#        'http://localhost:3000',
+# )
 
 # Application definition
 
@@ -41,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'corsheaders',
+    "gunicorn",
 ]
 
 REST_FRAMEWORK = {
@@ -72,7 +79,7 @@ ROOT_URLCONF = 'patrickf-backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(FRONTEND_DIR, 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,10 +141,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATICFILES_DIRS = (
+    os.path.join(FRONTEND_DIR, 'build/static/'),
+)
+
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+
 STATIC_URL = '/static/'
-
-CORS_ORIGIN_ALLOW_ALL = True
-
-# CORS_ORIGIN_WHITELIST = (
-#        'localhost:3000',
-# )

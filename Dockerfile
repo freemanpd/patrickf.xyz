@@ -1,8 +1,10 @@
 FROM python:3.7.4-buster
 ENV PYTHONUNBUFFERED 1
-RUN mkdir /app-django
-WORKDIR /app-django
-COPY requirements.txt /app-django/
+RUN mkdir /app
+WORKDIR /app
+COPY requirements.txt /app/
 RUN pip install -r requirements.txt
-COPY patrickf-backend /app-django/
-COPY api /app-django/
+RUN python3  manage.py collectstatic
+COPY patrickf-backend /app/patrickf-backend
+COPY patrickf-ui /app/patrickf-ui
+COPY api /app/api

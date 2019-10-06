@@ -1,5 +1,5 @@
 # base image
-FROM node:12.2.0-alpine
+FROM node:10.16.3-alpine
 
 RUN mkdir /app-react
 

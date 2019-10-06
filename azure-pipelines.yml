@@ -5,11 +5,13 @@
 variables:
   DBNAME: pg11
   DBHOST: 127.0.0.1
-  DBUSER: admin
+  DBUSER: postgres
   DBPASS: password123
   DBPORT: 5432
-  backend-imageName: 'patrickfxyz-django-backend'
+  backend-imageName: 'patrickfxyz-django-react'
+  #backend-imageName: 'patrickfxyz-django-backend'
   ui-imageName: 'patrickfxyz-react-ui'
+  version: 0.0.1
 # Note: not used for PRODUCTION!!!! 
 
 resources:
@@ -20,6 +22,7 @@ resources:
  
 trigger:
 - master
+# update triggers to build based on branch/?? and/or certain changes
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -80,14 +83,14 @@ steps:
     dockerfile: Dockerfile
     containerRegistry: AzurecontainerRegistry
     tags: |
-      0.0.1
+      $(version)
 
-- task: Docker@2
-  displayName: Build an $(ui-imageName) Docker image
-  inputs:
-    command: buildAndPush
-    repository: patrickfxyz/$(ui-imageName)
-    dockerfile: patrickf-ui/Dockerfile
-    containerRegistry: AzurecontainerRegistry
-    tags: |
-      0.0.1
+# - task: Docker@2
+#   displayName: Build an $(ui-imageName) Docker image
+#   inputs:
+#     command: buildAndPush
+#     repository: patrickfxyz/$(ui-imageName)
+#     dockerfile: patrickf-ui/Dockerfile
+#     containerRegistry: AzurecontainerRegistry
+#     tags: |
+#       $(version)
