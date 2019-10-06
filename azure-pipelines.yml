@@ -84,8 +84,11 @@ steps:
     repository: patrickfxyz/$(backend-imageName)
     dockerfile: Dockerfile
     containerRegistry: AzurecontainerRegistry
+    arguments: --env DBNAME --env DBHOST --env DBUSER --env DBPASS --env DBPORT --env DBSECRETKEY --env DEBUGLOG
     tags: |
       $(version)
+
+  
 
 # - task: Docker@2
 #   displayName: Build an $(ui-imageName) Docker image
