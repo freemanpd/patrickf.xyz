@@ -2,6 +2,7 @@
 FROM nikolaik/python-nodejs:python3.7-nodejs10
 
 # vars
+ENV PATH /app/patrickf-ui/node_modules/.bin:$PATH
 ENV PYTHONUNBUFFERED 1
 ENV NAME=$DBNAME
 ENV HOST=$DBHOST
@@ -22,7 +23,9 @@ COPY manage.py /app/
 COPY scripts/start.sh /app/start.sh
 
 WORKDIR /app/patrickf-ui
-RUN npm install react react-scripts -g --silent
+RUN npm install --silent
+RUN npm install react -g --silent
+RUN npm install react-scripts -g --silent
 RUN npm run build
 
 WORKDIR /app
