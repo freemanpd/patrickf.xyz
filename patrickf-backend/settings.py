@@ -24,8 +24,8 @@ FRONTEND_DIR = os.path.abspath(
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ('DBSECRETKEY', 'password123password123')
-DEBUG = os.environ('DEBUGLOG', 'FALSE')
+SECRET_KEY = os.getenv('DBSECRETKEY', 'password123password123')
+DEBUG = os.getenv('DEBUGLOG', 'FALSE')
 
 
 ALLOWED_HOSTS = ['127.0.0.1']
@@ -101,11 +101,11 @@ WSGI_APPLICATION = 'patrickf-backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ('DBNAME', 'devdb'),
-        'HOST': os.environ('DBHOST', '127.0.0.1'),
-        'USER': os.environ('DBUSER', 'postgres'),
-        'PASSWORD': os.environ('DBPASS', 'password123'),
-        'PORT': os.environ('DBPORT', '5432'),
+        'NAME': os.getenv('DBNAME', 'devdb'),
+        'HOST': os.getenv('DBHOST', '127.0.0.1'),
+        'USER': os.getenv('DBUSER', 'postgres'),
+        'PASSWORD': os.getenv('DBPASS', 'password123'),
+        'PORT': os.getenv('DBPORT', '127.0.0.1'),
     }
 }
     
