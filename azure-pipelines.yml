@@ -86,7 +86,7 @@ steps:
     containerRegistry: AzurecontainerRegistry
     tags: |
       $(version)
-    arguments: --env NAME=$(DBNAME) --env HOST=$(DBHOST) --env USER=$(DBUSER) --env PASS=$(DBPASS) --env PORT=$(DBPORT) --env SECRET_KEY=$(DBSECRETKEY) --env DEBUG=$(DEBUGLOG)
+    arguments: --build-arg NAME=$(DBNAME) --build-arg HOST=$(DBHOST) --build-arg USER=$(DBUSER) --build-arg PASS=$(DBPASS) --build-arg PORT=$(DBPORT) --build-arg SECRET_KEY=$(DBSECRETKEY) --build-arg DEBUG=$(DEBUGLOG)
     
 - task: Docker@2
   displayName: Push $(backend-imageName) Docker image
