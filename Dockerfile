@@ -12,6 +12,7 @@ ENV PORT=$DBPORT
 ENV SECRET_KEY=$DBSECRETKEY
 ENV DEBUG=$DEBUGLOG
 
+# finalize python build
 RUN mkdir /app
 WORKDIR /app
 COPY requirements.txt /app/
@@ -22,12 +23,14 @@ COPY api /app/api
 COPY manage.py /app/
 COPY scripts/start.sh /app/start.sh
 
+# react build
 WORKDIR /app/patrickf-ui
 RUN npm install --silent
 RUN npm install react -g --silent
 RUN npm install react-scripts -g --silent
 RUN npm run build
 
+# finalize python build 
 WORKDIR /app
 RUN python manage.py collectstatic --noinput
-CMD ["/start.sh"]
+#CMD ["/start.sh"]

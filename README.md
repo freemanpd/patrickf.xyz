@@ -14,7 +14,7 @@ This repository contains all the code to my personal webiste ["patrickf.xyz"](ht
 * PostgreSQL - database
 * NGINX - reverse proxying
 
-Note: you don't nessar
+Note/Warning: you don't necessarily need all the above tools to deploy simple personal website. I used the above tools for learning purposes and to demontrate my understanding of the entire stack.
 
 ### Roadmap
 * Status page
@@ -49,3 +49,5 @@ python manage.py collectstatic
 
 ### .1
 
+## Testing
+docker build -t sample:dev .

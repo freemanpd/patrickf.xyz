@@ -24,7 +24,7 @@ FRONTEND_DIR = os.path.abspath(
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DBSECRETKEY', 'password123password123')
+SECRET_KEY = os.getenv('DBSECRETKEY', 'changmechangeme123!')
 DEBUG = os.getenv('DEBUGLOG', 'FALSE')
 
 
@@ -104,12 +104,11 @@ DATABASES = {
         'NAME': os.getenv('DBNAME', 'devdb'),
         'HOST': os.getenv('DBHOST', '127.0.0.1'),
         'USER': os.getenv('DBUSER', 'postgres'),
-        'PASSWORD': os.getenv('DBPASS', 'password123'),
+        'PASSWORD': os.getenv('DBPASS', 'changemepassword123'),
         'PORT': os.getenv('DBPORT', '127.0.0.1'),
     }
 }
     
-
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
