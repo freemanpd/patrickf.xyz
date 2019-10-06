@@ -86,8 +86,7 @@ steps:
     containerRegistry: AzurecontainerRegistry
     tags: |
       $(version)
-    
-#arguments: --build-arg DBNAME=$(DBNAME) --build-arg DBHOST=$(DBHOST) --build-arg DBUSER=$(DBUSER) --build-arg DBPASS=$(DBPASS) --build-arg DBPORT=$(DBPORT) --build-arg DBSECRETKEY=$(DBSECRETKEY) --build-arg DEBUGLOG=$(DEBUGLOG)
+    arguments: --build-arg NAME=$(DBNAME) --build-arg HOST=$(DBHOST) --build-arg USER=$(DBUSER) --build-arg PASS=$(DBPASS) --build-arg PORT=$(DBPORT) --build-arg SECRET_KEY=$(DBSECRETKEY) --build-arg DEBUG=$(DEBUGLOG)
   
 
 # - task: Docker@2
