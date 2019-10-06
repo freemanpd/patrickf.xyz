@@ -73,9 +73,9 @@ steps:
     testRunTitle: 'Python $(PYTHON_VERSION)'
   condition: succeededOrFailed()
 
-- task: KubectlInstaller@0
-  inputs:
-    kubectlVersion: '1.1.6' 
+# - task: KubectlInstaller@0
+#   inputs:
+#     kubectlVersion: '1.1.6' 
 
 - task: Docker@2
   displayName: Build an $(backend-imageName) Docker image
