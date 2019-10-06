@@ -1,4 +1,5 @@
-FROM python:3.7.4-buster
+#FROM python:3.7.4-buster
+FROM python3.7-nodejs10
 
 # vars
 ENV PYTHONUNBUFFERED 1
