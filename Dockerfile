@@ -4,8 +4,8 @@ RUN mkdir /app
 WORKDIR /app
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
-RUN python manage.py collectstatic
 COPY patrickf-backend /app/patrickf-backend
-COPY manage.py /app/
 COPY patrickf-ui /app/patrickf-ui
 COPY api /app/api
+COPY manage.py /app/
+RUN python manage.py collectstatic --noinput
