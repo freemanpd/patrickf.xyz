@@ -84,7 +84,7 @@ steps:
     repository: patrickfxyz/$(backend-imageName)
     dockerfile: Dockerfile
     containerRegistry: AzurecontainerRegistry
-    arguments: --build-arg DBNAME --build-arg DBHOST --build-arg DBUSER --build-arg DBPASS --build-arg DBPORT --build-arg DBSECRETKEY --build-arg DEBUGLOG
+    arguments: --build-arg DBNAME=$(DBNAME) --build-arg DBHOST=$(DBHOST) --build-arg DBUSER=$(DBUSER) --build-arg DBPASS=$(DBPASS) --build-arg DBPORT=$(DBPORT) --build-arg DBSECRETKEY=$(DBSECRETKEY) --build-arg DEBUGLOG=$(DEBUGLOG)
     tags: |
       $(version)
 
