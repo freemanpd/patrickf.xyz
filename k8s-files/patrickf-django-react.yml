@@ -10,12 +10,12 @@ data:
   DB_PASS: {{ .Values.DBPASS }}
   DB_PORT: {{ .Values.DBPORT }}
   DB_SECRETKEY: {{ .Values.DBSECRETKEY }}
-  DB_DEBUGLOG: {{ .Values.DBDEBUGLOG }}
+  DEBUGLOG: {{ .Values.DEBUGLOG }}
 
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: patrickfxyz/patrickfxyz-django-backend-migrate
+  name: patrickfxyz/patrickfxyz-django-react-migrate
   labels:
     name: django-k8s-starter
     type: migrate
@@ -23,11 +23,11 @@ spec:
   template:
     spec:
       containers:
-      - name: patrickfxyz/patrickfxyz-django-backend-migrate
-        image: patrickfregistry.azurecr.io/patrickfxyz/patrickfxyz-django-backend:0.0.1
+      - name: patrickfxyz/patrickfxyz-django-react-migrate
+        image: patrickfregistry.azurecr.io/patrickfxyz/patrickfxyz-django-react:0.0.1
         command: ["python",  "manage.py", "migrate", "--noinput"]
         envFrom:
         - configMapRef:
-            name: patrickfxyz-django-backend-config
+            name: patrickfxyz-django-react-config
       restartPolicy: Never
   backoffLimit: 4

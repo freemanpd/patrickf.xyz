@@ -8,6 +8,8 @@ variables:
   DBUSER: postgres
   DBPASS: password123
   DBPORT: 5432
+  DBSECRETKEY: '$2j=bhs+=-&sp=glzxka%thsaq%tmrjt@+my06y@q4osfnmkn)'
+  DEBUGLOG: TRUE
   backend-imageName: 'patrickfxyz-django-react'
   #backend-imageName: 'patrickfxyz-django-backend'
   ui-imageName: 'patrickfxyz-react-ui'
