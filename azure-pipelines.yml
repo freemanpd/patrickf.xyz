@@ -80,14 +80,22 @@ steps:
 - task: Docker@2
   displayName: Build an $(backend-imageName) Docker image
   inputs:
-    command: buildAndPush
+    command: build
     repository: patrickfxyz/$(backend-imageName)
     dockerfile: Dockerfile
     containerRegistry: AzurecontainerRegistry
     tags: |
       $(version)
     arguments: --env NAME=$(DBNAME) --env HOST=$(DBHOST) --env USER=$(DBUSER) --env PASS=$(DBPASS) --env PORT=$(DBPORT) --env SECRET_KEY=$(DBSECRETKEY) --env DEBUG=$(DEBUGLOG)
-  
+    
+- task: Docker@2
+  displayName: Push $(backend-imageName) Docker image
+  inputs:
+    command: push
+    repository: patrickfxyz/$(backend-imageName)
+    containerRegistry: AzurecontainerRegistry
+    tags: |
+      $(version)
 
 # - task: Docker@2
 #   displayName: Build an $(ui-imageName) Docker image
