@@ -24,7 +24,7 @@ FRONTEND_DIR = os.path.abspath(
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRETKEY']
+SECRET_KEY = os.environ['DBSECRETKEY']
 DEBUG = os.environ['DEBUGLOG']
 
 ALLOWED_HOSTS = ['127.0.0.1']
