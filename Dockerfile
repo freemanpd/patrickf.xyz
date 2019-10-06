@@ -1,4 +1,6 @@
 FROM python:3.7.4-buster
+
+# vars
 ENV PYTHONUNBUFFERED 1
 ENV NAME=$DBNAME
 ENV HOST=$DBHOST
@@ -7,6 +9,7 @@ ENV PASSWORD=$DBPASS
 ENV PORT=$DBPORT
 ENV SECRET_KEY=$DBSECRETKEY
 ENV DEBUG=$DEBUGLOG
+
 RUN mkdir /app
 WORKDIR /app
 COPY requirements.txt /app/
@@ -16,5 +19,10 @@ COPY patrickf-ui /app/patrickf-ui
 COPY api /app/api
 COPY manage.py /app/
 COPY scripts/start.sh /app/start.sh
+
+WORKDIR /app/patrickf-ui
+RUN npm run build
+
+WORKDIR /app
 RUN python manage.py collectstatic --noinput
 CMD ["/start.sh"]
