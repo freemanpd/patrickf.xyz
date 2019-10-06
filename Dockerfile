@@ -22,7 +22,7 @@ COPY manage.py /app/
 COPY scripts/start.sh /app/start.sh
 
 WORKDIR /app/patrickf-ui
-RUN npm install react-scripts -g --silent
+RUN npm install react react-scripts -g --silent
 RUN npm run build
 
 WORKDIR /app
