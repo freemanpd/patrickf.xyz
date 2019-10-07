@@ -27,8 +27,7 @@ FRONTEND_DIR = os.path.abspath(
 SECRET_KEY = os.getenv('DBSECRETKEY', 'changmechangeme123!')
 DEBUG = os.getenv('DEBUGLOG', 'FALSE')
 
-
-ALLOWED_HOSTS = ['patrickf.xyz']
+ALLOWED_HOSTS = ['patrickf.xyz','app']
 
 # CORS_ORIGIN_ALLOW_ALL = True
 
