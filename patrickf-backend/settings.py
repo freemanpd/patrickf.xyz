@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('DBSECRETKEY', 'changmechangeme123!')
 DEBUG = os.getenv('DEBUGLOG', 'FALSE')
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['patrickf.xyz']
 
 # CORS_ORIGIN_ALLOW_ALL = True
 
