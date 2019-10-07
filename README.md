@@ -14,7 +14,7 @@ This repository contains all the code to my personal webiste ["patrickf.xyz"](ht
 * PostgreSQL - database
 * NGINX - reverse proxying
 
-Note/Warning: you don't necessarily need all the above tools to deploy simple personal website. I used the above tools for learning purposes and to demontrate my understanding of the entire stack.
+Note/Warning: you don't necessarily need all the above tools to deploy simple personal website. I used the above tools for learning purposes and to demontrate my understanding of the entire stack and architecture.
 
 ### Roadmap
 * Status page
@@ -41,6 +41,7 @@ python manage.py migrate
 python manage.py createsuperuser --username admin
 ```
 
+5. Build static files
 ```
 python manage.py collectstatic
 ```

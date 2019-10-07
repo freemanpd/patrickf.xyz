@@ -12,7 +12,7 @@ ENV PORT=$DBPORT
 ENV SECRET_KEY=$DBSECRETKEY
 ENV DEBUG=$DEBUGLOG
 
-# finalize python build
+# python build
 RUN mkdir /app
 WORKDIR /app
 COPY requirements.txt /app/
