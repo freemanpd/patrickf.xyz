@@ -318,3 +318,5 @@ kubeconfig_aws
 
 # Ignore aws-iam-authenticator executable
 aws-iam-authenticator
+
+*secrets.yml
