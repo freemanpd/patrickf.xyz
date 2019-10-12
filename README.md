@@ -1,18 +1,18 @@
 # patrickf.xyz
 [![Build Status](https://dev.azure.com/freemanpd36/freemanpd36/_apis/build/status/freemanpd.patrickf.xyz?branchName=master)](https://dev.azure.com/freemanpd36/freemanpd36/_build/latest?definitionId=1&branchName=master)
 
-This repository contains all the code to my personal webiste ["patrickf.xyz"](https://patrickf.xyz).
+This repository contains all the source code for my personal webiste ["patrickf.xyz"](https://patrickf.xyz).
 
 ## Built using
 * DigitalOcean Kubernetes (DOKS) - cloud/container infrastructure
+* DigitalOcean Load Balancer - ingress
 * Teraform - infrastructure deployment
 * Azure Pipelines - CI/CD
 * Azure Container Registry - storing Docker images
 * Azure Blob storage - storing Terraform state remotely
-* DJANGO - back-end RestAPI
-* React - front-end application
+* DJANGO - back-end/RestAPI
+* React - front-end/User Interface
 * PostgreSQL - database
-* NGINX - reverse proxying
 
 Note/Warning: you don't necessarily need all the above tools to deploy simple personal website. I used the above tools for learning purposes and to demontrate my understanding of the entire stack and architecture.
 
@@ -43,7 +43,7 @@ python manage.py createsuperuser --username admin
 
 5. Build static files
 ```
-python manage.py collectstatic
+ python manage.py collectstatic --noinput
 ```
 
 ## Changelog

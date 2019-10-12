@@ -2,37 +2,19 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: nginx-patrickfxyz-https-lb
+  name: patrickfxyz-dolb-nginx-https
   annotations:
-    service.beta.kubernetes.io/do-loadbalancer-protocol: "https"
+    service.beta.kubernetes.io/do-loadbalancer-protocol: "http"
     service.beta.kubernetes.io/do-loadbalancer-algorithm: "round_robin"
     service.beta.kubernetes.io/do-loadbalancer-tls-ports: "443"
     service.beta.kubernetes.io/do-loadbalancer-certificate-id: "35616d08-3445-4610-abeb-765b9c966ad2"
-    service.beta.kubernetes.io/do-loadbalancer-healthcheck-path: "/health"
+    service.beta.kubernetes.io/do-loadbalancer-redirect-http-to-https: "true"
 spec:
   type: LoadBalancer
   selector:
-    app: nginx-patrickfxyz-https-lb
+    app: patrickfxyz-django-react
   ports:
     - name: https
       protocol: TCP
       port: 443
-      targetPort: 80
----
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: nginx-patrickfxyz-https-lb
-spec:
-  replicas: 2
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
-        ports:
-        - containerPort: 80
-          protocol: TCP
+      targetPort: 8000

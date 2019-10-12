@@ -1,33 +1,61 @@
 ---
-apiVersion: v1
-kind: ConfigMap
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: patrickf-djagno-backend-config
-data:
-  DB_HOST: {{ .Values.DBHOST }} #e.g. postgres
-  DB_NAME: {{ .Values.DBNAME }}
-  DB_USER: {{ .Values.DBUSER }}
-  DB_PASS: {{ .Values.DBPASS }}
-  DB_PORT: {{ .Values.DBPORT }}
-  DB_SECRETKEY: {{ .Values.DBSECRETKEY }}
-  DEBUGLOG: {{ .Values.DEBUGLOG }}
-
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: patrickfxyz/patrickfxyz-django-react-migrate
+  name: patrickfxyz-django-react-deployment
   labels:
-    name: django-k8s-starter
-    type: migrate
+    app: patrickfxyz-django-react
 spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: patrickfxyz-django-react
   template:
+    metadata:
+      labels:
+        app: patrickfxyz-django-react
     spec:
       containers:
-      - name: patrickfxyz/patrickfxyz-django-react-migrate
-        image: patrickfregistry.azurecr.io/patrickfxyz/patrickfxyz-django-react:0.0.1
-        command: ["python",  "manage.py", "migrate", "--noinput"]
-        envFrom:
-        - configMapRef:
-            name: patrickfxyz-django-react-config
-      restartPolicy: Never
-  backoffLimit: 4
+      - name: patrickfxyz-django-react
+        image: patrickfRegistry.azurecr.io/patrickfxyz/patrickfxyz-django-react:0.0.1
+        imagePullPolicy: Always
+        command: ["/bin/sh", "-c"]
+        args:
+          - python3 manage.py migrate --noinput; python3 manage.py runserver 0.0.0.0:8000;
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DBUSER
+          valueFrom:
+            secretKeyRef:
+              name: patrickfxyz-creds
+              key: user
+        - name: DBPASS
+          valueFrom:
+            secretKeyRef:
+              name: patrickfxyz-creds
+              key: password
+        - name: DBSECRETKEY
+          valueFrom:
+            secretKeyRef:
+              name: patrickfxyz-creds
+              key: secretkey
+        - name: DBNAME
+          valueFrom:
+            secretKeyRef:
+              name: patrickfxyz-creds
+              key: dbname
+        - name: DBPORT
+          valueFrom:
+            secretKeyRef:
+              name: patrickfxyz-creds
+              key: dbport
+        - name: DBHOST
+          valueFrom:
+            secretKeyRef:
+              name: patrickfxyz-creds
+              key: dbendpoint
+        - name: DEBUGLOG
+          value: 'TRUE'
+      imagePullSecrets:
+      - name: acrsecret1

@@ -1,84 +1,62 @@
 ---
-kind: ConfigMap
 apiVersion: v1
+kind: Service
 metadata:
-  name: postgres-config
+  name: patrickf-progresql
   labels:
-    app: postgres
-data:
-  POSTGRES_DB: ${DBNAME}
-  POSTGRES_USER: ${DBUSER}
-  POSTGRES_PASSWORD: ${DBPASS}
-
---- 
-kind: PersistentVolume
-apiVersion: v1
-metadata:
-  name: postgres-pv-volume
-  labels:
-    type: local
-    app: postgres
+    app: drupal
 spec:
-  storageClassName: manual
-  capacity:
-    storage: 5Gi
-  accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: "/mnt/data"
-
+  ports:
+    - port: 5432
+  selector:
+    app: patrickf-progresql
+    tier: postgreSQL
 ---
-kind: PersistentVolumeClaim
 apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
-  name: postgres-pv-claim
+  name: patrickf-progresql-claim
   labels:
-    app: postgres
+    app: drupal
 spec:
-  storageClassName: manual
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
+      storage: 10Gi
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: postgres
+  name: patrickf-progresql
+  labels:
+    app: patrickf-progresql
 spec:
-  replicas: 1
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
-        app: postgres
+        app: patrickf-progresql
+        tier: postgreSQL
     spec:
       containers:
-        - name: postgres
-          image: postgres:11
-          imagePullPolicy: "IfNotPresent"
+        - image: postgres:latest
+          name: patrickf-progresql
+          env:
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_DB
+              value: patrickfxyz
+            - name: POSTGRES_PASSWORD
+              value: password123
           ports:
-            - containerPort: ${DBPORT}
-          envFrom:
-            - configMapRef:
-                name: postgres-config
+            - containerPort: 5432
+              name: patrickf-progresql
           volumeMounts:
-            - mountPath: /var/lib/postgresql/data
-              name: postgredb
+            - name: patrickf-progresql
+              mountPath: /var/lib/postgresql/data
       volumes:
-        - name: postgredb
+        - name: patrickf-progresql
           persistentVolumeClaim:
-            claimName: postgres-pv-claim
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: postgres
-  labels:
-    app: postgres
-spec:
-  type: NodePort
-  ports:
-   - port: ${DBPORT}
-  selector:
-   app: postgres
+            claimName: patrickf-progresql-claim
