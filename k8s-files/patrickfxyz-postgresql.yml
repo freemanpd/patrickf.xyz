@@ -25,7 +25,7 @@ spec:
     requests:
       storage: 10Gi
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: patrickf-progresql
@@ -44,12 +44,21 @@ spec:
         - image: postgres:latest
           name: patrickf-progresql
           env:
-            - name: POSTGRES_USER
-              value: postgres
-            - name: POSTGRES_DB
-              value: patrickfxyz
-            - name: POSTGRES_PASSWORD
-              value: password123
+          - name: POSTGRES_USER
+            valueFrom:
+              secretKeyRef:
+                name: patrickfxyz-creds
+                key: username
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: patrickfxyz-creds
+                key: password
+          - name: POSTGRES_DB
+            valueFrom:
+              secretKeyRef:
+                name: patrickfxyz-creds
+                key: dbname
           ports:
             - containerPort: 5432
               name: patrickf-progresql
