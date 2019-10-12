@@ -1,6 +1,6 @@
 module "k8s" {
   source                = "hajowieland/k8s/digitalocean"
-  version               = "1.0.0"
+  version               = "1.0.3"
   enable_digitalocean   = "true"
   random_cluster_suffix = "dev"
   do_k8s_nodes          = "2"
@@ -12,13 +12,4 @@ module "k8s" {
   do_k8s_node_type     = "s-1vcpu-2gb"
   do_k8s_nodepool_type = "s-1vcpu-2gb"
   do_k8s_pool_name     = "k8s-nodepool-do"
-}
-
-resource "digitalocean_database_cluster" "postgres" {
-  name       = "patrickfxzy-postgres"
-  engine     = "pg"
-  version    = "11"
-  size       = "db-s-1vcpu-1gb"
-  region     = "nyc1"
-  node_count = 1
 }
