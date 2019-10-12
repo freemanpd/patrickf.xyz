@@ -1,9 +1,9 @@
 #FROM python:3.7.4-buster
 FROM nikolaik/python-nodejs:python3.7-nodejs10
 
-RUN apk add --virtual build-deps gcc python3-dev musl-dev \
-    && apk add postgresql-dev nmap vim \
-    && pip install psycopg2 
+# RUN apk add --virtual build-deps gcc python3-dev musl-dev \
+#     && apk add postgresql-dev nmap vim \
+#     && pip install psycopg2 
 
 # vars
 ENV PATH /app/patrickf-ui/node_modules/.bin:$PATH
