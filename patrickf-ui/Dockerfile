@@ -1,19 +1,14 @@
 # base image
 FROM node:10.16.3-alpine
 
-RUN mkdir /app/react
-
-# set working directory
-WORKDIR /app/
-
-ENV PATH /app/react/node_modules/.bin:$PATH
-
-# install and cache app dependencies
-COPY package.json /app/react/package.json
+RUN mkdir -p /app/patrickf-ui
+WORKDIR /app
+COPY patrickf-ui /app/patrickf-ui
+WORKDIR /app/patrickf-ui
 RUN npm install --silent
-RUN npm install react-scripts@3.0.1 -g --silent
-COPY . /app/react
+RUN npm install react -g --silent
+RUN npm install react-scripts -g --silent
 RUN npm run build
 
 # start app
-CMD ["npm", "start"]
+# CMD ["npm", "start"]
