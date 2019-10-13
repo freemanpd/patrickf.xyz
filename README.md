@@ -4,15 +4,15 @@
 This repository contains all the source code for my personal webiste ["patrickf.xyz"](https://patrickf.xyz).
 
 ## Built using
-* DigitalOcean Kubernetes (DOKS) - cloud/container infrastructure
-* DigitalOcean Load Balancer - ingress
-* Teraform - infrastructure deployment
-* Azure Pipelines - CI/CD
-* Azure Container Registry - storing Docker images
-* Azure Blob storage - storing Terraform state remotely
-* DJANGO - back-end/RestAPI
-* React - front-end/User Interface
-* PostgreSQL - database
+* [ DigitalOcean Kubernetes (DOKS) ](https://www.digitalocean.com/) - cloud/container infrastructure
+* [ DigitalOcean Load Balancer ](https://www.digitalocean.com/) - route external network traffic
+* [ Teraform  ](https://www.terraform.io/) - infrastructure deployment automation
+* [ Azure Pipelines ](https://azure.microsoft.com/en-us/services/devops/pipelines/) - continuous integration/continuous delivery (ci/cd)
+* [ Azure Container Registry ](https://azure.microsoft.com/en-us/services/container-registry/) - Docker image store
+* [ Azure Blob storage ](https://www.djangoproject.com/) - Terraform remote state store
+* [ Django ](https://www.djangoproject.com/) - back-end/RestAPI
+* [ React ](https://reactjs.org/) - front-end/User Interface
+* [PostgreSQL](https://www.postgresql.org/) - database service for Django
 
 Note/Warning: you don't necessarily need all the above tools to deploy simple personal website. I used the above tools for learning purposes and to demontrate my understanding of the entire stack and architecture.
 

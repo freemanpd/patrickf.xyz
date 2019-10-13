@@ -1,9 +1,5 @@
-#FROM python:3.7.4-buster
-FROM nikolaik/python-nodejs:python3.7-nodejs10
-
-# RUN apk add --virtual build-deps gcc python3-dev musl-dev \
-#     && apk add postgresql-dev nmap vim \
-#     && pip install psycopg2 
+FROM python:3.7.4-buster
+# FROM nikolaik/python-nodejs:python3.7-nodejs10
 
 # vars
 ENV PATH /app/patrickf-ui/node_modules/.bin:$PATH
@@ -17,14 +13,14 @@ ARG DBSECRETKEY
 ARG DEBUGLOG
 
 # react build
-RUN mkdir -p /app/patrickf-ui
-WORKDIR /app
-COPY patrickf-ui /app/patrickf-ui
-WORKDIR /app/patrickf-ui
-RUN npm install --silent
-RUN npm install react -g --silent
-RUN npm install react-scripts -g --silent
-RUN npm run build
+# RUN mkdir -p /app/patrickf-ui
+# WORKDIR /app
+# COPY patrickf-ui /app/patrickf-ui
+# WORKDIR /app/patrickf-ui
+# RUN npm install --silent
+# RUN npm install react -g --silent
+# RUN npm install react-scripts -g --silent
+# RUN npm run build
 
 # python build
 WORKDIR /app

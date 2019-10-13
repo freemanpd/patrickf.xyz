@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patrickfxyz-react-deployment
+  labels:
+    app: patrickfxyz-react
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: patrickfxyz-react
+  template:
+    metadata:
+      labels:
+        app: patrickfxyz-react
+    spec:
+      containers:
+      - name: patrickfxyz-react
+        image: patrickfRegistry.azurecr.io/patrickfxyz/patrickfxyz-react:0.0.1
+        imagePullPolicy: Always
+        command: ["/bin/sh", "-c"]
+        args:
+          - npm start;
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: acrsecret1

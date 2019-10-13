@@ -2,7 +2,7 @@
 
 set -x
 
-kubectl delete deployment.extensions/patrickfxyz-dolb-nginx-deployment service/patrickfxyz-dolb-nginx-https deployment.extensions/patrickfxyz-dolb-nginx configmap/nginx-conf
+#kubectl delete deployment.extensions/patrickfxyz-dolb-nginx-deployment service/patrickfxyz-dolb-nginx-https deployment.extensions/patrickfxyz-dolb-nginx configmap/nginx-conf
 
 sleep 5
 
@@ -19,7 +19,7 @@ sleep 10
 
 kubectl create -f patrickfxyz-django-react.yml
 
-sleep 10
+#sleep 10
 
 
-kubectl create -f patrickfxyz-dolb.yml
+#kubectl create -f patrickfxyz-dolb.yml

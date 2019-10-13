@@ -10,9 +10,9 @@ variables:
   DBPORT: 5432
   DBSECRETKEY: '$2j=bhs+=-&sp=glzxka%thsaq%tmrjt@+my06y@q4osfnmkn)'
   DEBUGLOG: TRUE
-  backend-imageName: 'patrickfxyz-django-react'
-  #backend-imageName: 'patrickfxyz-django-backend'
-  ui-imageName: 'patrickfxyz-react-ui'
+ #backend-imageName: 'patrickfxyz-django-react'
+  backend-imageName: 'patrickfxyz-django'
+  ui-imageName: 'patrickfxyz-react'
   version: 0.0.1
 # Note: not used for PRODUCTION!!!! 
 
@@ -73,10 +73,6 @@ steps:
     testRunTitle: 'Python $(PYTHON_VERSION)'
   condition: succeededOrFailed()
 
-# - task: KubectlInstaller@0
-#   inputs:
-#     kubectlVersion: '1.1.6' 
-
 - task: Docker@2
   displayName: Build an $(backend-imageName) Docker image
   inputs:
@@ -97,12 +93,12 @@ steps:
     tags: |
       $(version)
 
-# - task: Docker@2
-#   displayName: Build an $(ui-imageName) Docker image
-#   inputs:
-#     command: buildAndPush
-#     repository: patrickfxyz/$(ui-imageName)
-#     dockerfile: patrickf-ui/Dockerfile
-#     containerRegistry: AzurecontainerRegistry
-#     tags: |
-#       $(version)
+- task: Docker@2
+  displayName: Build an $(ui-imageName) Docker image
+  inputs:
+    command: buildAndPush
+    repository: patrickfxyz/$(ui-imageName)
+    dockerfile: patrickf-ui/Dockerfile
+    containerRegistry: AzurecontainerRegistry
+    tags: |
+      $(version)

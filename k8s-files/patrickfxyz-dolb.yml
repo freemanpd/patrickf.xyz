@@ -12,9 +12,9 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: patrickfxyz-django-react
+    app: patrickfxyz-dolb-nginx-https
   ports:
     - name: https
       protocol: TCP
       port: 443
-      targetPort: 8000
+      targetPort: 3000

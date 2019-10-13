@@ -2,27 +2,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: patrickfxyz-django-react-deployment
+  name: patrickfxyz-django-deployment
   labels:
-    app: patrickfxyz-django-react
+    app: patrickfxyz-django
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: patrickfxyz-django-react
+      app: patrickfxyz-django
   template:
     metadata:
       labels:
-        app: patrickfxyz-django-react
+        app: patrickfxyz-django
     spec:
       containers:
-      - name: patrickfxyz-django-react
-        image: patrickfRegistry.azurecr.io/patrickfxyz/patrickfxyz-django-react:0.0.1
+      - name: patrickfxyz-django
+        image: patrickfRegistry.azurecr.io/patrickfxyz/patrickfxyz-django:0.0.1
         imagePullPolicy: Always
         command: ["/bin/sh", "-c"]
         args:
           - python3 manage.py migrate --noinput; python3 manage.py runserver 0.0.0.0:8000;
-          # - python3 manage.py migrate --noinput; python3 manage.py runserver 0.0.0.0:8000;
         ports:
         - containerPort: 8000
         env:
