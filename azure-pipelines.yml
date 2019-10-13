@@ -30,11 +30,13 @@ pool:
   vmImage: 'ubuntu-latest'
 strategy:
   matrix:
-    Python37:
-      PYTHON_VERSION: '3.7'
     node_10_16:
       node_version: '10.16'
   maxParallel: 1
+
+#   Python37:
+#      PYTHON_VERSION: '3.7'
+#   maxParallel: 1
 
 steps:
 - task: NodeTool@0
@@ -106,7 +108,7 @@ steps:
   inputs:
     command: buildAndPush
     repository: patrickfxyz/$(ui-imageName)
-    dockerfile: patrickf-ui/Dockerfile
+    dockerfile: Dockerfile
     containerRegistry: AzurecontainerRegistry
     tags: |
       $(version)
