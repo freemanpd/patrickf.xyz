@@ -17,8 +17,9 @@ from datetime import timedelta
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 BACKEND_DIR = BASE_DIR 
-FRONTEND_DIR = os.path.abspath(
-    os.path.join(BACKEND_DIR, 'patrickf-ui'))
+# FRONTEND_DIR = os.path.abspath(
+#     os.path.join(BACKEND_DIR, 'patrickf-ui'))
+
 #
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -27,7 +28,7 @@ FRONTEND_DIR = os.path.abspath(
 SECRET_KEY = os.getenv('DBSECRETKEY', 'changmechangeme123!')
 DEBUG = os.getenv('DEBUGLOG', 'FALSE')
 
-ALLOWED_HOSTS = ['patrickf.xyz', 'app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['patrickf.xyz', '127.0.0.1', 'localhost']
 
 # CORS_ORIGIN_ALLOW_ALL = True
 
@@ -142,11 +143,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATICFILES_DIRS = (
-    os.path.join(FRONTEND_DIR, 'build/static/'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(FRONTEND_DIR, 'build/static/'),
+# )
 
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+# PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+# STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 STATIC_URL = '/static/'

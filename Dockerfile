@@ -2,7 +2,7 @@ FROM python:3.7.4-buster
 # FROM nikolaik/python-nodejs:python3.7-nodejs10
 
 # vars
-ENV PATH /app/patrickf-ui/node_modules/.bin:$PATH
+#ENV PATH /app/patrickf-ui/node_modules/.bin:$PATH
 ENV PYTHONUNBUFFERED 1
 ARG DBNAME
 ARG DBHOST
@@ -31,4 +31,4 @@ COPY api /app/api
 COPY manage.py /app/
 RUN pip install -r requirements.txt
 RUN pip install pipenv
-RUN python manage.py collectstatic --noinput
+#RUN python manage.py collectstatic --noinput

@@ -18,6 +18,7 @@ Note/Warning: you don't necessarily need all the above tools to deploy simple pe
 
 ### Roadmap
 * Status page
+* KPIs
 
 ### Requirements
 1. Python 3.7+
