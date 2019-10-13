@@ -32,8 +32,8 @@ strategy:
   matrix:
     Python37:
       PYTHON_VERSION: '3.7'
-    node_10_x:
-      node_version: 10.x
+    node_10_16:
+      node_version: 10.16
   maxParallel: 1
 
 steps:
@@ -41,7 +41,7 @@ steps:
   inputs:
     versionSpec: $(node_version)
   displayName: 'Install Node.js'
-  
+
 # steps:
 # - task: UsePythonVersion@0
 #   inputs:
