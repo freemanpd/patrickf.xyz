@@ -22,9 +22,9 @@ variables:
 #     image: postgres:11
 #     ports: 5432
  
-# trigger:
-# - master
-# # update triggers to build based on branch/?? and/or certain changes
+trigger:
+- master
+# update triggers to build based on branch/?? and/or certain changes
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -39,7 +39,7 @@ strategy:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: $(node_version)
+    versionSpec: 10.16
   displayName: 'Install Node.js'
 
 # steps:
