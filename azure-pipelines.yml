@@ -26,14 +26,22 @@ variables:
 # - master
 # # update triggers to build based on branch/?? and/or certain changes
 
-# pool:
-#   vmImage: 'ubuntu-latest'
-# strategy:
-#   matrix:
-#     Python37:
-#       PYTHON_VERSION: '3.7'
-#   maxParallel: 1
+pool:
+  vmImage: 'ubuntu-latest'
+strategy:
+  matrix:
+    Python37:
+      PYTHON_VERSION: '3.7'
+    node_10_x:
+      node_version: 10.x
+  maxParallel: 1
 
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: $(node_version)
+  displayName: 'Install Node.js'
+  
 # steps:
 # - task: UsePythonVersion@0
 #   inputs:
