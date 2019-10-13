@@ -1,6 +1,8 @@
 # base image
 FROM node:10.16.3-alpine
 
+ENV PATH /app/patrickf-ui/node_modules/.bin:$PATH
+
 RUN mkdir -p /app/patrickf-ui
 WORKDIR /app
 COPY patrickf-ui /app/patrickf-ui
