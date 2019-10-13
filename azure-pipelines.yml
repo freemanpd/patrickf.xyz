@@ -33,7 +33,7 @@ strategy:
     Python37:
       PYTHON_VERSION: '3.7'
     node_10_16:
-      node_version: 10.16
+      node_version: '10.16'
   maxParallel: 1
 
 steps:

@@ -15,7 +15,7 @@ ARG DEBUGLOG
 # react build
 # RUN mkdir -p /app/patrickf-ui
 # WORKDIR /app
-# COPY patrickf-ui /app/patrickf-ui
+# COPY * /app/patrickf-ui
 # WORKDIR /app/patrickf-ui
 # RUN npm install --silent
 # RUN npm install react -g --silent
