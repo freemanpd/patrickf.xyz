@@ -320,3 +320,7 @@ kubeconfig_aws
 aws-iam-authenticator
 
 *secret*
+
+# airflow
+airflow-webserver.pid
+airflow.db

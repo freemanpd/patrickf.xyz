@@ -7,6 +7,8 @@ import Footer from './Components/Footer';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import Projects from './Components/Projects';
+import KPIs from './Components/Kpis';
+import Status from './Components/Status';
 
 class App extends Component {
 

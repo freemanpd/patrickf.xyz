@@ -10,11 +10,12 @@ This repository contains all the source code for my personal webiste ["patrickf.
 * [ Azure Pipelines ](https://azure.microsoft.com/en-us/services/devops/pipelines/) - continuous integration/continuous delivery (ci/cd)
 * [ Azure Container Registry ](https://azure.microsoft.com/en-us/services/container-registry/) - Docker image store
 * [ Azure Blob storage ](https://www.djangoproject.com/) - Terraform remote state store
-* [ Django ](https://www.djangoproject.com/) - back-end/RestAPI
-* [ React ](https://reactjs.org/) - front-end/User Interface
+* [ Django ](https://www.djangoproject.com/) - back-end/Restful API
+* [ React ](https://reactjs.org/) - front-end/User Interface (UI)
 * [PostgreSQL](https://www.postgresql.org/) - database service for Django
+* [Django Rest Framework](https://www.django-rest-framework.org/) - toolkit for building API
 
-Note/Warning: you don't necessarily need all the above tools to deploy simple personal website. I used the above tools for learning purposes and to demontrate my understanding of the entire stack and architecture.
+Note/Warning: you don't necessarily need all the above tools to deploy a simple personal website. I used the above tools for learning purposes and to demontrate my understanding of the entire application stack/architecture.
 
 ### Roadmap
 * Status page

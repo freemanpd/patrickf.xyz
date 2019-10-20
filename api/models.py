@@ -1,3 +1,37 @@
 from django.db import models
 
-# Create your models here.
+class Github(models.Model):
+    gh_login = models.CharField(blank=False, max_length=100)
+    gh_id = models.CharField(blank=False, max_length=100)
+    gh_node_id = models.CharField(blank=False, max_length=100)
+    gh_avatar_url = models.CharField(blank=True, max_length=100)
+    gh_gravatar_id = models.CharField(blank=True max_length=100)
+    gh_url = models.CharField(blank=True max_length=100)
+    gh_html_url =  models.CharField(blank=True max_length=100)
+    gh_followers_url =  models.CharField(blank=True max_length=100)
+    gh_following_url =  models.CharField(blank=True max_length=100)
+    gh_gists_url =  models.CharField(blank=True max_length=100)
+    gh_starred_url =  models.CharField(blank=True max_length=100)
+    gh_subscriptions_url =  models.CharField(blank=True max_length=100)
+    gh_organizations_url =  models.CharField(blank=True max_length=100)
+    gh_repos_url =  models.CharField(blank=True max_length=100)
+    gh_events_url =  models.CharField(blank=True max_length=100)
+    gh_received_events_url =  models.CharField(blank=True max_length=100)
+    gh_type =  models.CharField(blank=True max_length=100)
+    gh_site_admin =  models.CharField(blank=True max_length=100)
+    gh_name =  models.CharField(blank=True max_length=100)
+    gh_company  =  models.CharField(blank=True max_length=100)
+    gh_blog =  models.CharField(blank=True max_length=100)
+    gh_location =  models.CharField(blank=True max_length=100)
+    gh_email =  models.CharField(blank=True max_length=100)
+    gh_hireable =  models.CharField(blank=True max_length=100)
+    gh_bio =  models.CharField(blank=True max_length=100)
+    gh_public_repos = models.IntegerField(blank=False)
+    gh_public_gists = models.IntegerField(blank=False)
+    gh_followers = models.IntegerField(blank=False)
+    gh_following = models.IntegerField(blank=False)
+    gh_created_at = models.DateFimeField(null=True, blank=False)
+    gh_updated_at= models.DateFimeField(null=True, blank=False)
+    def __str__(self):
+       return self.title
+

@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'corsheaders',
-    "gunicorn",
+    'gunicorn',
+    'jobs',
 ]
 
 REST_FRAMEWORK = {

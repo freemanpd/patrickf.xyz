@@ -17,3 +17,6 @@ python-json-logger = "*"
 psycopg2-binary = "*"
 coverage = "*"
 django-cors-headers = "*"
+requests = "*"
+apache-airflow = {extras = ["github_enterprise", "google_auth", "kubernetes", "ldap", "postgres"],version = "*"}
+schedule = "*"
