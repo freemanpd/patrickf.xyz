@@ -18,6 +18,7 @@ strategy:
       node_version: '10.16'
   maxParallel: 1
 
+steps:
 - task: Docker@2
   displayName: Build an hugo Docker image
   inputs:
