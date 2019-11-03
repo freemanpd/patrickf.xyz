@@ -28,6 +28,8 @@ WORKDIR /app
 
 COPY patrickf-hugo/ /app/patrickf-hugo
 
+RUN mkdir -p /app/patrickf-hugo/themes
+
 RUN patrickf-hugo/themes/KeepIT /app/patrickf-hugo/themes/KeepIT 
 
 RUN ls -lart *
