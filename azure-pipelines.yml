@@ -13,6 +13,7 @@ variables:
  #backend-imageName: 'patrickfxyz-django-react'
   backend-imageName: 'patrickfxyz-django'
   ui-imageName: 'patrickfxyz-react'
+  imageName: patrickfxyz-hugo
   version: 0.0.1
 # Note: not used for PRODUCTION!!!! 
 
@@ -38,11 +39,11 @@ strategy:
 #      PYTHON_VERSION: '3.7'
 #   maxParallel: 1
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: 10.16
-  displayName: 'Install Node.js'
+# steps:
+# - task: NodeTool@0
+#   inputs:
+#     versionSpec: 10.16
+#   displayName: 'Install Node.js'
 
 # steps:
 # - task: UsePythonVersion@0
@@ -83,32 +84,42 @@ steps:
 #     testRunTitle: 'Python $(PYTHON_VERSION)'
 #   condition: succeededOrFailed()
 
-- task: Docker@2
-  displayName: Build an $(backend-imageName) Docker image
-  inputs:
-    command: build
-    repository: patrickfxyz/$(backend-imageName)
-    dockerfile: Dockerfile-backend
-    containerRegistry: AzurecontainerRegistry
-    tags: |
-      $(version)
-    arguments: --build-arg NAME=$(DBNAME) --build-arg HOST=$(DBHOST) --build-arg USER=$(DBUSER) --build-arg PASS=$(DBPASS) --build-arg PORT=$(DBPORT) --build-arg SECRET_KEY=$(DBSECRETKEY) --build-arg DEBUG=$(DEBUGLOG)
+# - task: Docker@2
+#   displayName: Build an $(backend-imageName) Docker image
+#   inputs:
+#     command: build
+#     repository: patrickfxyz/$(backend-imageName)
+#     dockerfile: Dockerfile-backend
+#     containerRegistry: AzurecontainerRegistry
+#     tags: |
+#       $(version)
+#     arguments: --build-arg NAME=$(DBNAME) --build-arg HOST=$(DBHOST) --build-arg USER=$(DBUSER) --build-arg PASS=$(DBPASS) --build-arg PORT=$(DBPORT) --build-arg SECRET_KEY=$(DBSECRETKEY) --build-arg DEBUG=$(DEBUGLOG)
     
-- task: Docker@2
-  displayName: Push $(backend-imageName) Docker image
-  inputs:
-    command: push
-    repository: patrickfxyz/$(backend-imageName)
-    containerRegistry: AzurecontainerRegistry
-    tags: |
-      $(version)
+# - task: Docker@2
+#   displayName: Push $(backend-imageName) Docker image
+#   inputs:
+#     command: push
+#     repository: patrickfxyz/$(backend-imageName)
+#     containerRegistry: AzurecontainerRegistry
+#     tags: |
+#       $(version)
+
+# - task: Docker@2
+#   displayName: Build an $(ui-imageName) Docker image
+#   inputs:
+#     command: buildAndPush
+#     repository: patrickfxyz/$(ui-imageName)
+#     dockerfile: Dockerfile-ui
+#     containerRegistry: AzurecontainerRegistry
+#     tags: |
+#       $(version)
 
 - task: Docker@2
-  displayName: Build an $(ui-imageName) Docker image
+  displayName: Build an hugo Docker image
   inputs:
     command: buildAndPush
-    repository: patrickfxyz/$(ui-imageName)
-    dockerfile: Dockerfile-ui
+    repository: patrickfxyz/$(imageName)
+    dockerfile: Dockerfile-hugo
     containerRegistry: AzurecontainerRegistry
     tags: |
       $(version)

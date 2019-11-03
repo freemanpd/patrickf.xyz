@@ -17,4 +17,3 @@ kubectl create -f patrickfxyz-react.yml
 sleep 10
 
 #kubectl create -f patrickfxyz-dolb.yml
-
