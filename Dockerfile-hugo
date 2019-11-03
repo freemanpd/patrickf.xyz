@@ -24,6 +24,9 @@ RUN mkdir -p /usr/local/src \
 WORKDIR /src
 
 RUN mkdir -p /app/patrickf-hugo
+
 WORKDIR /app
 
 COPY patrickf-hugo /app/patrickf-hugo
+
+WORKDIR /app/patrickf-hugo

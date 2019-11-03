@@ -2,26 +2,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: patrickfxyz-react-deployment
+  name: patrickfxyz-hugo-deployment
   labels:
-    app: patrickfxyz-react
+    app: patrickfxyz-hugo
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: patrickfxyz-react
+      app: patrickfxyz-hugo
   template:
     metadata:
       labels:
-        app: patrickfxyz-react
+        app: patrickfxyz-hugo
     spec:
       containers:
-      - name: patrickfxyz-react
-        image: patrickfRegistry.azurecr.io/patrickfxyz/patrickfxyz-react:0.0.1
+      - name: patrickfxyz-hugo
+        image: patrickfRegistry.azurecr.io/patrickfxyz/patrickfxyz-hugo:0.0.1
         imagePullPolicy: Always
         command: ["/bin/sh", "-c"]
         args:
-          - npm start;
+          -  /usr/local/bin/hugo server -p 3000 --disableLiveReload;
         ports:
         - containerPort: 3000
       imagePullSecrets:
