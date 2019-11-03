@@ -30,7 +30,9 @@ RUN chown -R hugo:hugo /app && chown -R hugo:hugo patrickf-hugo
 
 COPY patrickf-hugo /app/patrickf-hugo
 
-RUN mkdir -p /app/patrickf-hugo/themes
+#RUN mkdir -p /app/patrickf-hugo/themes
+
+RUN rm -rf /app/patrickf-hugo/themes/KeepIT
 
 RUN git clone https://github.com/Fastbyte01/KeepIt.git /app/patrickf-hugo/themes/KeepIT
 
