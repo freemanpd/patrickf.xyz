@@ -1,5 +1,4 @@
-#
-FROM alpine:latest
+FROM golang:1.13.3-alpine3.10
 
 MAINTAINER Patrick Freeman
 
