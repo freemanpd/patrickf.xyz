@@ -26,13 +26,11 @@ RUN mkdir -p /app/patrickf-hugo
 
 WORKDIR /app
 
-RUN chown -R hugo:hugo /app && chown -R hugo:hugo patrickf-hugo 
-
 COPY patrickf-hugo /app/patrickf-hugo
 
 RUN mkdir -p /app/patrickf-hugo/themes
 
-RUN patrickf-hugo/themes/KeepIT /app/patrickf-hugo/themes/KeepIT 
+COPY patrickf-hugo/themes/KeepIT /app/patrickf-hugo/themes/KeepIT 
 
 RUN ls -lart *
 
