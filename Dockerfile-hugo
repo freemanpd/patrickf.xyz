@@ -37,3 +37,5 @@ COPY patrickf-hugo/themes/KeepIT /app/patrickf-hugo/themes/KeepIT
 RUN ls -lart *
 
 WORKDIR /app/patrickf-hugo
+
+RUN /usr/local/bin/hugo
