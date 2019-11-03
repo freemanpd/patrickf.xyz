@@ -21,8 +21,6 @@ RUN mkdir -p /usr/local/src \
     && addgroup -Sg 1000 hugo \
     && adduser -SG hugo -u 1000 -h /src hugo
 
-WORKDIR /src
-
 RUN mkdir -p /app/patrickf-hugo
 
 WORKDIR /app
@@ -30,6 +28,5 @@ WORKDIR /app
 COPY patrickf-hugo/ /app/patrickf-hugo
 
 RUN ls -lart *
-RUN ls -lart themes/*
 
-WORKDIR /app/patrickf-hugo/
+WORKDIR /app/patrickf-hugo

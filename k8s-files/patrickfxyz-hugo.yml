@@ -21,7 +21,8 @@ spec:
         imagePullPolicy: Always
         command: ["/bin/sh", "-c"]
         args:
-          -  /usr/local/bin/hugo server -D -p 3000 --disableLiveReload;
+          - ls -lart themes/*
+          -  /usr/local/bin/hugo server -D --config /app/patrickf-hugo/config.toml --theme /app/patrickf-hugo/themes/KeepIT  -p 3000 --disableLiveReload;
         ports:
         - containerPort: 3000
       imagePullSecrets:
