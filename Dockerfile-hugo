@@ -32,7 +32,7 @@ COPY patrickf-hugo /app/patrickf-hugo
 
 RUN mkdir -p /app/patrickf-hugo/themes
 
-COPY patrickf-hugo/themes/KeepIT /app/patrickf-hugo/themes/KeepIT 
+RUN git clone https://github.com/Fastbyte01/KeepIt.git /app/patrickf-hugo/themes/KeepIT
 
 RUN ls -lart *
 
