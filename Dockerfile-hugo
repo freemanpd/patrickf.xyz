@@ -27,7 +27,7 @@ RUN mkdir -p /app/patrickf-hugo
 
 WORKDIR /app
 
-COPY patrickf-hugo/* /app/patrickf-hugo
+COPY patrickf-hugo/ /app/patrickf-hugo
 
 RUN ls -lart *
 
