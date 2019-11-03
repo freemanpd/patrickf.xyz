@@ -26,6 +26,8 @@ RUN mkdir -p /app/patrickf-hugo
 
 WORKDIR /app
 
+RUN chown -R hugo:hugo /app
+
 COPY patrickf-hugo /app/patrickf-hugo
 
 RUN mkdir -p /app/patrickf-hugo/themes
