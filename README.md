@@ -25,6 +25,7 @@ This repository contains all the source code for my personal webiste ["patrickf.
 1. Clone repository
 ```
 git clone git@github.com:freemanpd/patrickf.xyz.git
+```
 
 2. Run site
 ```
