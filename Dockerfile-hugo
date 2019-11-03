@@ -6,7 +6,7 @@ RUN apk add --no-cache \
     curl \
     git \
     openssh-client \
-    rsync \
+    rsync
 
 ENV VERSION 0.59.1
 RUN mkdir -p /usr/local/src \
@@ -27,7 +27,7 @@ WORKDIR /app
 
 COPY patrickf-hugo/ /app/patrickf-hugo
 
-COPY patrickf-hugo/themes/KeepIT /app/patrickf-hugo/themes/KeepIT
+COPY patrickf-hugo/themes/KeepIT /app/patrickf-hugo/themes/KeepIT 
 
 RUN ls -lart *
 
