@@ -7,7 +7,6 @@ RUN apk add --no-cache \
     git \
     openssh-client \
     rsync \
-    python3-pygments
 
 ENV VERSION 0.59.1
 RUN mkdir -p /usr/local/src \
