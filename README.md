@@ -9,43 +9,26 @@ This repository contains all the source code for my personal webiste ["patrickf.
 * [ Teraform  ](https://www.terraform.io/) - infrastructure deployment automation
 * [ Azure Pipelines ](https://azure.microsoft.com/en-us/services/devops/pipelines/) - continuous integration/continuous delivery (ci/cd)
 * [ Azure Container Registry ](https://azure.microsoft.com/en-us/services/container-registry/) - Docker image store
-* [ Azure Blob storage ](https://www.djangoproject.com/) - Terraform remote state store
-* [ Django ](https://www.djangoproject.com/) - back-end/Restful API
-* [ React ](https://reactjs.org/) - front-end/User Interface (UI)
-* [PostgreSQL](https://www.postgresql.org/) - database service for Django
-* [Django Rest Framework](https://www.django-rest-framework.org/) - toolkit for building API
-
-Note/Warning: you don't necessarily need all the above tools to deploy a simple personal website. I used the above tools for learning purposes and to demontrate my understanding of the entire application stack/architecture.
+* [ Azure Blob storage ](https://azure.microsoft.com/en-us/services/storage/blobs/) - Terraform remote state store
+* [ Hugo ](https://gohugo.io/) - static site generators
+* [ KeepIt ](https://github.com/Fastbyte01/KeepIt) - Hugo theme
 
 ### Roadmap
 * Status page
 * KPIs
 
 ### Requirements
-1. Python 3.7+
-1. Pipenv 
+1. Go
+1. Hugo
 
 ## Installation
-1. Start Python virtual ENV
+1. Clone repository
 ```
-pipenv shell
-```
-2. Install dependencies
-```
-pipenv install
-```
-3. Run database migrations
-```
-python manage.py migrate
-```
-4. Create admin user
-```
-python manage.py createsuperuser --username admin
-```
+git clone git@github.com:freemanpd/patrickf.xyz.git
 
-5. Build static files
+2. Run site
 ```
- python manage.py collectstatic --noinput
+hugo server -D
 ```
 
 ## Changelog
