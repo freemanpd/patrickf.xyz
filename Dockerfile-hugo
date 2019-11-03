@@ -21,14 +21,14 @@ RUN mkdir -p /usr/local/src \
     && addgroup -Sg 1000 hugo \
     && adduser -SG hugo -u 1000 -h /src hugo
 
-RUN mkdir -p /app/patrickf-hugo
+RUN mkdir -p /src/patrickf-hugo
 
-WORKDIR /app
+WORKDIR /src
 
-COPY patrickf-hugo/ /app/patrickf-hugo
+COPY patrickf-hugo/ /src/patrickf-hugo
 
-COPY patrickf-hugo/themes/KeepIT /app/patrickf-hugo/themes/KeepIT 
+COPY patrickf-hugo/themes/KeepIT /src/patrickf-hugo/themes/KeepIT 
 
 RUN ls -lart *
 
-WORKDIR /app/patrickf-hugo
+WORKDIR /src/patrickf-hugo
