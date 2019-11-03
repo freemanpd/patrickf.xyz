@@ -30,5 +30,6 @@ WORKDIR /app
 COPY patrickf-hugo/ /app/patrickf-hugo
 
 RUN ls -lart *
+RUN ls -lart themes/*
 
-WORKDIR /app/patrickf-hugo
+WORKDIR /app/patrickf-hugo/

@@ -21,7 +21,7 @@ spec:
         imagePullPolicy: Always
         command: ["/bin/sh", "-c"]
         args:
-          -  /usr/local/bin/hugo server -p 3000 --disableLiveReload;
+          -  /usr/local/bin/hugo server -D -p 3000 --disableLiveReload;
         ports:
         - containerPort: 3000
       imagePullSecrets:
