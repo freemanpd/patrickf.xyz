@@ -27,6 +27,8 @@ WORKDIR /app
 
 COPY patrickf-hugo/ /app/patrickf-hugo
 
+COPY patrickf-hugo/themes/KeepIT patrickf-hugo/themes/KeepIT
+
 RUN ls -lart *
 
 WORKDIR /app/patrickf-hugo
