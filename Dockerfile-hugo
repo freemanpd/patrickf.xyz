@@ -10,9 +10,9 @@ RUN apk add --no-cache \
 
 ARG VERSION=0.59.1
 
-ADD https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_${VERSION}_Linux-64bit.tar.gz /hugo.tar.gz
+ADD https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_${VERSION}_Linux-64bit.tar.gz
 
-RUN tar -zxvf hugo.tar.gz
+RUN tar -zxvf hugo_${VERSION}_Linux-64bit.tar.gz
 RUN /hugo version
 
 RUN mv hugo /usr/local/bin/hugo 
