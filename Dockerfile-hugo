@@ -18,12 +18,12 @@ RUN mv hugo /usr/local/bin/hugo
 
 RUN /usr/local/bin/hugo version
     
-RUN mkdir -p /app/patrickf-hugo
+RUN mkdir -p /app
 
 RUN pwd
-WORKDIR /app/patrickf-hugo
+WORKDIR /app/
 
-COPY patrickf-hugo /app/patrickf-hugo/
+COPY patrickf-hugo /app/
 
 RUN pwd
 RUN ls -lart *
