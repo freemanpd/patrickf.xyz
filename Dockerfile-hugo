@@ -13,9 +13,10 @@ ARG VERSION=0.59.1
 ADD https://github.com/gohugoio/hugo/releases/download/v${VERSION}/hugo_${VERSION}_Linux-64bit.tar.gz hugo_${VERSION}_Linux-64bit.tar.gz
 
 RUN tar -zxvf hugo_${VERSION}_Linux-64bit.tar.gz
-RUN /hugo version
 
 RUN mv hugo /usr/local/bin/hugo 
+
+RUN /usr/local/bin/hugo version
     
 RUN mkdir -p /app/patrickf-hugo
 
