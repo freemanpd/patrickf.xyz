@@ -22,10 +22,12 @@ RUN mkdir -p /app/patrickf-hugo
 
 WORKDIR /app
 
-COPY patrickf-hugo /app/patrickf-hugo
+COPY patrickf-hugo /app/patrickf-hugo/
 
 RUN ls -lart *
 
 WORKDIR /app/patrickf-hugo
+
+RUN ls -lart *
 
 RUN /usr/local/bin/hugo
