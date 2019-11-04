@@ -20,13 +20,10 @@ RUN /usr/local/bin/hugo version
     
 RUN mkdir -p /app/patrickf-hugo
 
-WORKDIR /app
+RUN pwd
+WORKDIR /app/patrickf-hugo
 
 COPY patrickf-hugo /app/patrickf-hugo/
-
-RUN ls -lart *
-
-WORKDIR /app/patrickf-hugo
 
 RUN pwd
 RUN ls -lart *
