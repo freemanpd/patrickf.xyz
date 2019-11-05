@@ -1,12 +1,12 @@
 FROM golang:1.13.3-alpine3.10
 
-MAINTAINER Patrick Freeman
+LABEL description="Docker container for building static sites with the Hugo static site generator."
+LABEL maintainer="Patrick Freeman" 
 
-RUN apk add --no-cache \
-    curl \
-    git \
-    openssh-client \
-    rsync
+
+RUN apk add --update git curl asciidoctor openssh-client rsync libc6-compat libstdc++ \
+    && apk upgrade \
+    && apk add --no-cache ca-certificates
 
 ARG VERSION=0.59.1
 
@@ -26,7 +26,7 @@ WORKDIR /app/patrickf-hugo
 
 RUN pwd
 
-COPY patrickf-hugo /app/patrickf-hugo
+COPY patrickf-hugo /app/patrickf-hugo/
 
 RUN ls -lart *
 
