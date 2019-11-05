@@ -21,9 +21,10 @@ RUN /usr/local/bin/hugo version
 RUN mkdir -p /app
 
 RUN pwd
-WORKDIR /app/patrickf-hugo
 
 COPY patrickf-hugo /app/
+
+WORKDIR /app/patrickf-hugo
 
 RUN pwd
 RUN ls -lart *
