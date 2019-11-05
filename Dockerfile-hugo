@@ -21,7 +21,7 @@ RUN /usr/local/bin/hugo version
 RUN mkdir -p /app
 
 RUN pwd
-WORKDIR /app/
+WORKDIR /app/patrickf-hugo
 
 COPY patrickf-hugo /app/
 

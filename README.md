@@ -10,7 +10,7 @@ This repository contains all the source code for my personal webiste ["patrickf.
 * [ Azure Pipelines ](https://azure.microsoft.com/en-us/services/devops/pipelines/) - continuous integration/continuous delivery (ci/cd)
 * [ Azure Container Registry ](https://azure.microsoft.com/en-us/services/container-registry/) - Docker image store
 * [ Azure Blob storage ](https://azure.microsoft.com/en-us/services/storage/blobs/) - Terraform remote state store
-* [ Hugo ](https://gohugo.io/) - static site generators
+* [ Hugo ](https://gohugo.io/) - static site generator
 * [ KeepIt ](https://github.com/Fastbyte01/KeepIt) - Hugo theme
 
 ### Roadmap
@@ -37,4 +37,4 @@ hugo server -D
 ### .1
 
 ## Testing
-docker build -t sample:dev .
+docker build -t sample:dev
