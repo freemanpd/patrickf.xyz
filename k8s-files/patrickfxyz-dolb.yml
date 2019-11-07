@@ -12,7 +12,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: patrickfxyz-react
+    app: patrickfxyz-hugo
   ports:
     - name: https
       protocol: TCP
