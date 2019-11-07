@@ -2,7 +2,7 @@ baseURL = "https://patrickf.xyz"
 languageCode = "en"
 defaultContentLanguage = "en"
 title = "patrickf.xyz"
-theme = "KeepIt"
+theme = "KeepIT"
 
 paginate = 12
 enableEmoji = true
